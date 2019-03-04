@@ -1,7 +1,7 @@
 package io.fotoapparat.result
 
 import android.graphics.BitmapFactory
-import java.util.*
+import java.util.Arrays
 
 /**
  * Taken photo.
@@ -61,14 +61,14 @@ data class Photo(
         return result
     }
 
+    override fun toString(): String =
+        "Photo(encodedImage=ByteArray(${encodedImage.size}) rotationDegrees=$rotationDegrees)"
+
     companion object {
-
-        private val EMPTY by lazy { Photo(encodedImage = ByteArray(0), rotationDegrees = 0) }
-
         /**
          * @return empty [Photo].
          */
-        internal fun empty(): Photo = EMPTY
+        internal fun empty(): Photo = Photo(encodedImage = ByteArray(0), rotationDegrees = 0)
     }
 
 }

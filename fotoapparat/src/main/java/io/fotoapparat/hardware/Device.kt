@@ -155,6 +155,7 @@ internal open class Device(
      * @return The desired from the user camera lens position.
      */
     open fun getLensPositionSelector(): LensPositionSelector = lensPositionSelector
+
 }
 
 /**
@@ -167,7 +168,8 @@ internal fun updateConfiguration(
         flashMode = newConfiguration.flashMode ?: savedConfiguration.flashMode,
         focusMode = newConfiguration.focusMode ?: savedConfiguration.focusMode,
         jpegQuality = newConfiguration.jpegQuality ?: savedConfiguration.jpegQuality,
-        exposureCompensation = newConfiguration.exposureCompensation ?: savedConfiguration.exposureCompensation,
+        exposureCompensation = newConfiguration.exposureCompensation
+                ?: savedConfiguration.exposureCompensation,
         frameProcessor = newConfiguration.frameProcessor ?: savedConfiguration.frameProcessor,
         previewFpsRange = newConfiguration.previewFpsRange ?: savedConfiguration.previewFpsRange,
         sensorSensitivity = newConfiguration.sensorSensitivity
